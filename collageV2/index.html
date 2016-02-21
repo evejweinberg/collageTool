@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Face Collage</title>
+    <style>
+    .dropshadow {
+        /*box-shadow: 1px 1px;*/
+        -webkit-filter: drop-shadow(1px 1px .5px rgba(0, 0, 0, 0.5));
+        filter: url(#drop-shadow);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+        filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    }
+
+    #faceFinal{
+        opacity: 0.3;
+        left:25%;
+        top:25%;
+        position: absolute;
+        z-index: -400;
+    }
+
+    </style>
+    <!-- <script src ="library.js"></script> -->
+    <!-- <script src="jquery-1.11.3.min.js"></script> -->
+    <script src="libs/Tone.min.js"></script>
+    <script src="libs/p5.min.js"></script>
+    <script src="everything.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="droppableArea"></div>
+        <div class="backgoundImage">
+        </div>
+    </div>
+    <img src="assets/faceFinal.png" id="faceFinal"></img>
+
+    <!-- <button onclick="hide(this);debug('dat button gone');">Hide1</button> -->
+    <!-- <button onclick="hide(this); debug('so gone');">Hide2</button> -->
+    <!-- <p>Just testing shit</p> -->
+    </div>
+    <script>
+    
+    </script>
+</body>
+
+</html>
