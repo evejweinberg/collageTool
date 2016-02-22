@@ -1,5 +1,9 @@
-//an amplitude envelope
-// var gainNode = Tone.context.createGain();
+//change Z index
+// know whrn they are in their final place
+// loop their song with blank space, endlessly, once they are in their final place
+
+
+
 var audioSamples = [];
 var env = new Tone.Envelope({
     "attack": 0.1,
@@ -13,78 +17,18 @@ for (var i = 0; i < 16; i++) {
     // var audio0[i] = "http://evejweinberg.github.io/samples/audio0"+i+".wav";
     var player = new Tone.Player("http://evejweinberg.github.io/samples/audio" + i + ".wav").toMaster();
     audioSamples.push(player)
-    // console.log("created  " + player0[i])
-}
-
-
-
-// var player00 = new Tone.Player(audio00).toMaster();
-// var player01 = new Tone.Player(audio01).toMaster();
-// var player02 = new Tone.Player(audio02).toMaster();
-// var player03 = new Tone.Player(audio03).toMaster();
-// var player04 = new Tone.Player(audio04).toMaster();
-
-//trigger the start of the sample once its loaded
-// Tone.Buffer.on("load", function(){
-//   player1.start();
-// });
-
-
-
-//////------ ////////// 
-
-
-// event name is? on drag?
-// which audio src files are we specifying?
-//
-/* on.('drag', function () {
-  $( "#myDiv" )
-  audio.play()
-})
-*/
-
-
-
-
-
-
-
-
-function moveon() {
-    // Display a modal dialog to ask the user a question
-    var answer = confirm("Ready to move on?");
-    // If they clicked the "OK" button, make the browser load a new page
-    if (answer) window.location = "http://google.com";
-}
-
-function hide(e, reflow) { // Hide the element e by scripting its style
-    if (reflow) { // If 2nd argument is true
-        e.style.display = "none" // hide element and use its space
-    } else { // Otherwise
-        e.style.visibility = "hidden"; // make e invisible, but leave its space
-    }
+        // console.log("created  " + player0[i])
 }
 
 
 
 
 window.onload = function() { // Run this function when the document loads
-    // use the library here 
-    // if($("#layer20").draggable){
-    // console.log("layer20")
-    // }
+// $("#layer20").draggable({
+//         drag: function(event, ui) {}
+//     });
 
-    $("#layer20").draggable({
-        drag: function(event, ui) {}
-    });
-
-    // $( "#layer20" ).on( "drag", function( ) { console.log("layer20")} );
-
-    // $(".draggable").draggable({
-    //   revert: function (event, ui) {
-    //      return (this.attr("id")==1);
-    //   }
-    // });
+ 
 
 
 
@@ -105,10 +49,18 @@ window.onload = function() { // Run this function when the document loads
 
     displayAllImages();
 
-    // for (i in imageObject.length) {
-    //     // imageObject
-    //     // player1.start();
-    // }
+
+
+
+
+    /* //////////psudo code/////////
+  if (layer[i] is in it's destination){
+loop it's sample, on a certain interval so it's hitting it's mark in the greater track
+each sample is 20 frames long and the entire song is 17 seconds 
+  }
+
+  ///////////////////////////
+  */
     var Allimages = [];
 
     function displayAllImages() {
