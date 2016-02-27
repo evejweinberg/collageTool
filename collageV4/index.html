@@ -3,49 +3,7 @@
 
 <head>
     <title>Face Collage</title>
-    <style>
-    #textbox{
-        position: absolute;
-        left:0px;
-        top: 0px;
-    }
-    .absolute{
-        position:absolute;
-    }
-    .dropshadow {
-        /*box-shadow: 1px 1px;*/
-        position: absolute;
-        -webkit-filter: drop-shadow(1px 1px .5px rgba(0, 0, 0, 0.5));
-        filter: url(#drop-shadow);
-        -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-        filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-    }
-    
-    #faceFinal {
-        opacity: 0.3;
-        left: 0px;
-        top: 0px;
-        position: absolute;
-        z-index: -400;
-    }
-    
-    .slowblink {
-        -webkit-animation-name: blinker;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
-        -webkit-animation-direction: alternate;
-        -webkit-animation-duration: 2.7s;
-    }
-    
-    @-webkit-keyframes blinker {
-        from {
-            opacity: 0.24;
-        }
-        to {
-            opacity: 0.0;
-        }
-    }
-    </style>
+ <link rel="stylesheet" type="text/css" href="style.css">
     <!-- <script src ="library.js"></script> -->
     <!-- <script src="jquery-1.11.3.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -65,16 +23,20 @@
     <div id ="textbox">
       <p>Final Song Competed: </p>
       <p id = "percentage"></p>
-      <p>/17</p>
+      <p>/20</p>
       </div>
-<!-- <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
-      </p> -->
-    <!-- <button onclick="hide(this);debug('dat button gone');">Hide1</button> -->
-    <!-- <button onclick="hide(this); debug('so gone');">Hide2</button> -->
-    <!-- <p>Just testing shit</p> -->
+
+
     </div>
-    <script>
-    </script>
+   <!--  <div id="target">
+   <button id="button" type="button">BUTT</button>
+   </div> -->
+   <script>
+       
+//        $('#target').click(function(){
+//     console.log('clicked')
+// $('body').addClass('bgbg');});
+   </script>
 
 </body>
 

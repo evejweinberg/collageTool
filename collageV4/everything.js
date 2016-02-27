@@ -6,10 +6,12 @@ var thresh = 10;
 var triggerDing = true;
 var totalFound = 0;
 var lookingtoAdd = true;
-function Ding()
-{
+
+
+
+function Ding(){
     
-    var envAmplitude = new Tone.AmplitudeEnvelope({
+var envAmplitude = new Tone.AmplitudeEnvelope({
     "attack": 0.001,
     "decay": 2,
     "sustain": 0,
@@ -21,8 +23,6 @@ var targetFoundDing = new Tone.Oscillator({
     "frequency" : 1200
 }).connect(envAmplitude);
 
-
-
 var envPitch = new Tone.FrequencyEnvelope({
     "baseFrequency": 300,
     "octaves" : 2,
@@ -32,12 +32,15 @@ var envPitch = new Tone.FrequencyEnvelope({
 
 }).connect(targetFoundDing.frequency);
 if (triggerDing==true){
+    console.log('ding is true')
 targetFoundDing.start();
 triggerDing=false;
+console.log('ding is false')
 }
 
 envAmplitude.triggerAttack("+0.5");
-envPitch.triggerAttack("+0.5");}
+envPitch.triggerAttack("+0.5");
+}
 
 
 var facePartsTarget = [
@@ -107,7 +110,7 @@ for (var i = 0; i < 20; i++) {
 
 function checkForFinished() {
     lookingtoAdd = true
-    console.log('checking them all')
+    // console.log('checking them all')
 
     var finished = false;
     //look at all face parts
@@ -122,8 +125,14 @@ function checkForFinished() {
         }
     }
     if (finished) {
-        //
-        //play the whole song!!!!!
+        console.log('you win!')
+        
+        $('body').addClass('bgbg');
+
+    }
+    if (totalFound == 20){
+        console.log('equals 20!')
+        $('body').addClass('bgbg');
     }
     //return finished;
 }
@@ -137,6 +146,7 @@ function makeImage(i) {
     imageObject.draggable({
         drag: function(event, ui) {
 
+console.log('trigger ding is true')
             // play a tone while dragging
             faceParts[i].draggingtone.start();
             //change frequency as you get close to the target
@@ -186,6 +196,7 @@ function AddtoTargetCount(){
     if (lookingtoAdd)
     {
         totalFound++
+        triggerDing=true
         lookingtoAdd = false
     }
     console.log(totalFound)
